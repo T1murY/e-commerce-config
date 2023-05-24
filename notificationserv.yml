@@ -1,4 +1,6 @@
 spring:
+  application:
+    name: notificationserv
   cassandra:
     contact-points: localhost
     port: 9042
@@ -7,3 +9,13 @@ spring:
     request.timeout: 10s
     connection.connect-timeout: 10s
     connection.init-query-timeout: 10s
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+    queue: notification-queue
+    exchange: notification
+    routing-key: notification.*
+server:
+  port: 9700
